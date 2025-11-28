@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>阿白の导航 · 终极版</title>
+  <meta name="description" content="一言、天气、热搜、统计、主题切换，纯静态全功能导航" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+  <button class="theme-toggle" id="themeBtn" aria-label="切换主题">☀️</button>
+  
+  <header>
+    <h1>阿白の导航</h1>
+    <p>一言 · 天气 · 热搜 · 统计 · 极致体验</p>
+  </header>
+
+  <div class="top-bar">
+    <div class="widget">
+      <h3>一言</h3>
+      <p id="hitokoto">加载中...</p>
+    </div>
+    <div class="widget">
+      <h3>天气</h3>
+      <div id="weather">获取中...</div>
+    </div>
+    <div class="widget">
+      <h3 id="hot-title">微博热搜</h3>
+      <ul class="hot-list" id="hot-list"><li>加载中...</li></ul>
+    </div>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="回车搜索 · 点击 G/B/Bi 切换引擎" autocomplete="off" />
+    <div class="search-btns">
+      <button data-engine="https://www.google.com/search?q=" class="active">G</button>
+      <button data-engine="https://www.baidu.com/s?wd=">B</button>
+      <button data-engine="https://cn.bing.com/search?q=">Bi</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- 示例分类，你可以继续添加 -->
+    <div class="category">
+      <h2>开发工具</h2>
+      <div class="links">
+        <a href="https://github.com" class="link-card" target="_blank">
+          <img src="https://github.com/favicon.ico" alt="GitHub" />
+          <span>GitHub</span>
+        </a>
+        <a href="https://chat.openai.com" class="link-card" target="_blank">
+          <img src="https://chat.openai.com/favicon.ico" alt="ChatGPT" />
+          <span>ChatGPT</span>
+        </a>
+        <a href="https://vercel.com" class="link-card" target="_blank">
+          <img src="https://vercel.com/favicon.ico" alt="Vercel" />
+          <span>Vercel</span>
+        </a>
+      </div>
+    </div>
+    <!-- 更多分类... -->
+  </main>
+
+  <div id="stats">统计加载中...</div>
+  <footer>© 2025 阿白の导航 · Powered by Cloudflare Pages</footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
