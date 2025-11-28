@@ -1,0 +1,5 @@
+.git
+.tasks
+.wrangler
+
+node_modules

@@ -1,3 +1,34 @@
+// === 新增：动态加载导航数据 ===
+async function loadSites() {
+  try {
+    const res = await fetch('/api/sites');
+    const data = await res.json();
+    
+    const main = document.querySelector('main');
+    main.innerHTML = ''; // 清空示例分类
+
+    data.forEach(cat => {
+      const div = document.createElement('div');
+      div.className = 'category';
+      div.innerHTML = `
+        <h2>${cat.name}</h2>
+        <div class="links">
+          ${cat.links.map(link => `
+            <a href="${link.url}" class="link-card" target="_blank" rel="noopener">
+              <img src="${link.icon || 'https://favicon.cc/404'}' alt="${link.name}" onerror="this.src='https://favicon.cc/404'" />
+              <span>${link.name}</span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+      main.appendChild(div);
+    });
+  } catch (err) {
+    console.error('加载导航失败', err);
+  }
+}
+
+// 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', () => {
   const html = document.documentElement;
   const themeBtn = document.getElementById('themeBtn');

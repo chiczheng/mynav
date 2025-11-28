@@ -1,0 +1,18 @@
+name = "mynav"
+compatibility_date = "2024-05-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nav_db"
+database_id = "27cb47f5-659c-459c-9ffb-5dc37750a0a4" # TODO: replace with your D1 database id
+
+[[kv_namespaces]]
+binding = "KV"
+id = "0da5e8096095460b8f51c7727238c211" # TODO: replace with your KV namespace id
+
+[vars]
+ADMIN_USER = "admin" # TODO: replace and set ADMIN_PASS_HASH via `wrangler secret put ADMIN_PASS_HASH`
+
+[pages]
+build_output_dir = "frontend"
+functions = "functions"
